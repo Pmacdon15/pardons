@@ -72,7 +72,7 @@ export default function ContactPage() {
                   className="w-full bg-slate-50 border border-slate-200 rounded-lg p-3 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none"
                 >
                   <option>General Inquiry</option>
-                  <option>Interested in $300 Service</option>
+                  <option>Interested in $100 Consultation</option>
                   <option>Eligibility Question</option>
                 </select>
               </div>

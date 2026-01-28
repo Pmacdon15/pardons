@@ -138,43 +138,87 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden">
-              <div className="bg-primary p-8 text-white text-center">
-                <span className="text-5xl font-extrabold">$300</span>
-                <p className="text-sm uppercase tracking-widest font-bold opacity-80 mt-2">
-                  Plus Government Fees
-                </p>
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {/* Orientation Tier */}
+              <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col">
+                <div className="bg-slate-800 p-8 text-white text-center">
+                  <span className="text-5xl font-extrabold">$100</span>
+                  <p className="text-sm uppercase tracking-widest font-bold opacity-80 mt-2">
+                    Professional Orientation
+                  </p>
+                </div>
+                <div className="p-10 space-y-6 flex-grow flex flex-col justify-between">
+                  <ul className="space-y-4">
+                    <li className="flex items-center gap-4 text-slate-700">
+                      <span className="text-primary font-bold italic">✓</span>
+                      <span>
+                        <strong>30-Minute Phone Call:</strong> Orientation to
+                        the process and personal guidance.
+                      </span>
+                    </li>
+                    <li className="flex items-center gap-4 text-slate-700">
+                      <span className="text-primary font-bold italic">✓</span>
+                      <span>
+                        <strong>Document Review:</strong> We review your
+                        application files for accuracy and completeness.
+                      </span>
+                    </li>
+                    <li className="flex items-center gap-4 text-slate-400">
+                      <span className="font-bold">✕</span>
+                      <span>No Email Support</span>
+                    </li>
+                  </ul>
+                  <Link
+                    href="/contact"
+                    className="block text-center bg-slate-900 text-white p-4 rounded-lg font-bold hover:bg-slate-800 transition-colors mt-6"
+                  >
+                    Select Orientation
+                  </Link>
+                </div>
               </div>
-              <div className="p-10 space-y-6">
-                <ul className="space-y-4">
-                  <li className="flex items-center gap-4 text-slate-700">
-                    <span className="text-primary font-bold italic">✓</span>
-                    <span>
-                      <strong>Phone Consultations:</strong> 2 x 30 min or 4 x 15
-                      min calls.
-                    </span>
-                  </li>
-                  <li className="flex items-center gap-4 text-slate-700">
-                    <span className="text-primary font-bold italic">✓</span>
-                    <span>
-                      <strong>Email Support:</strong> Dedicated help for 6
-                      months.
-                    </span>
-                  </li>
-                  <li className="flex items-center gap-4 text-slate-700">
-                    <span className="text-primary font-bold italic">✓</span>
-                    <span>
-                      <strong>Quality Assurance:</strong> We review all your
-                      documents before submission.
-                    </span>
-                  </li>
-                </ul>
-                <Link
-                  href="/contact"
-                  className="block text-center bg-slate-900 text-white p-4 rounded-lg font-bold hover:bg-slate-800 transition-colors"
-                >
-                  Sign Up Now
-                </Link>
+
+              {/* Full Assistance Tier */}
+              <div className="bg-white rounded-2xl border-2 border-primary overflow-hidden flex flex-col relative shadow-xl">
+                <div className="absolute top-4 right-4 bg-white text-primary text-[10px] px-2 py-1 rounded font-bold uppercase tracking-tight">
+                  Best Value
+                </div>
+                <div className="bg-primary p-8 text-white text-center">
+                  <span className="text-5xl font-extrabold">$300</span>
+                  <p className="text-sm uppercase tracking-widest font-bold opacity-80 mt-2">
+                    Full Assistance Package
+                  </p>
+                </div>
+                <div className="p-10 space-y-6 flex-grow flex flex-col justify-between">
+                  <ul className="space-y-4">
+                    <li className="flex items-center gap-4 text-slate-700">
+                      <span className="text-primary font-bold italic">✓</span>
+                      <span>
+                        <strong>Multiple Consultations:</strong> Extended phone
+                        support whenever you need it.
+                      </span>
+                    </li>
+                    <li className="flex items-center gap-4 text-slate-700">
+                      <span className="text-primary font-bold italic">✓</span>
+                      <span>
+                        <strong>Complete Document Management:</strong> We handle
+                        the review and organization of all files.
+                      </span>
+                    </li>
+                    <li className="flex items-center gap-4 text-slate-700">
+                      <span className="text-primary font-bold italic">✓</span>
+                      <span>
+                        <strong>6-Month Email Support:</strong> Dedicated
+                        assistance with 2-3 business day response times.
+                      </span>
+                    </li>
+                  </ul>
+                  <Link
+                    href="/contact"
+                    className="block text-center bg-primary text-white p-4 rounded-lg font-bold hover:bg-primary-hover transition-colors mt-6 shadow-md"
+                  >
+                    Get Full Assistance
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
