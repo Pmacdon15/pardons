@@ -132,7 +132,9 @@ export function ContactForm() {
                   aria-invalid={fieldState.invalid}
                   className="w-full bg-slate-50 border border-slate-200 rounded-lg  text-sm outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none"
                 >
-                
+                  <option value="" disabled>
+                    Select a subject
+                  </option>
                   <option value="inquiry">General Inquiry</option>
                   <option value="100-consultation">$100 Consultation</option>
                   <option value="300-full-assistance">

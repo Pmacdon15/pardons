@@ -13,12 +13,10 @@ export function EmailTemplate({
 }: EmailTemplateProps) {
   return (
     <div>
-      <h1> {name} has sent a message!</h1>
-      <p>
-        {name}'s email is: {email}
-      </p>
-      <p>There are interested in: {subject}</p>
-      <p>Their message to you is: {message}</p>
+      <h1>New message from: {name}</h1>
+      <p>Email: {email}</p>
+      <p>Subject: {subject}</p>
+      <p>Message: {message}</p>
     </div>
   );
 }
