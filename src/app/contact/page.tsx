@@ -21,7 +21,7 @@ export default function ContactPage(props: PageProps<"/contact">) {
             <div className="bg-white p-6 rounded-xl border border-slate-200">
               <p className="font-bold text-slate-900">Email Us</p>
               <p className="text-primary hover:underline cursor-pointer">
-                help@pardonsareus.ca
+                help@notifications.pardonsareus.ca
               </p>
             </div>
             <div className="bg-white p-6 rounded-xl border border-slate-200">
