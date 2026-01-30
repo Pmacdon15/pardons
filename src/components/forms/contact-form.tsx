@@ -18,18 +18,18 @@ import { Textarea } from "@/components/ui/textarea";
 import { useSendMessage } from "@/mutations/send-message";
 import { type FormValues, formSchema } from "@/zod/schemas";
 
+const validSubjects = [
+  "inquiry",
+  "100-consultation",
+  "300-full-assistance",
+] as const;
+type SubjectType = (typeof validSubjects)[number];
+
 export function ContactForm({
   subjectPromise,
 }: {
   subjectPromise?: Promise<string>;
 }) {
-  const validSubjects = [
-    "inquiry",
-    "100-consultation",
-    "300-full-assistance",
-  ] as const;
-  type SubjectType = (typeof validSubjects)[number];
-
   const [defaultSubject, setDefaultSubject] = useState<SubjectType>("inquiry");
 
   // Watch for subjectPromise changes and update defaultSubject
