@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex-grow">
+    <main className="grow">
       {/* Hero Section */}
       <section className="py-24 text-center">
         <div className="container mx-auto px-6">
@@ -16,7 +16,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
-              href="/contact"
+              href="/contact?subject=inquiry"
               className="bg-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-primary-hover transition-all"
             >
               Get Professional Help
@@ -160,7 +160,7 @@ export default function Home() {
                   </li>
                 </ul>
                 <Link
-                 href={`/contact?type=${encodeURI("orientation")}`}
+                  href={"/contact?subject=100-consultation"}
                   className="block text-center bg-slate-900 text-white p-4 rounded-lg font-bold hover:bg-slate-800 transition-colors mt-6"
                 >
                   Select Orientation
@@ -204,7 +204,7 @@ export default function Home() {
                   </li>
                 </ul>
                 <Link
-                  href={`/contact?type=${encodeURI("Get Full Assistance")}`}
+                  href={"/contact?subject=300-full-assistance"}
                   className="block text-center bg-primary text-white p-4 rounded-lg font-bold hover:bg-primary-hover transition-colors mt-6 shadow-md"
                 >
                   Get Full Assistance

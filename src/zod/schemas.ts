@@ -9,7 +9,7 @@ export const formSchema = z.object({
   email: z.email("Enter a valid email address."),
 
   subject: z.enum(["inquiry", "100-consultation", "300-full-assistance"], {
-    errorMap: () => ({ message: "Please select a subject." }),
+    message: "Please select a subject.",
   }),
 
   message: z

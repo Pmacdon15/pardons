@@ -1,6 +1,13 @@
+import { Suspense } from "react";
 import { ContactForm } from "@/components/forms/contact-form";
 
-export default function ContactPage() {
+export default function ContactPage(props: PageProps<"/contact">) {
+  const subjectPromise = props.searchParams.then((params) =>
+    Array.isArray(params.subject)
+      ? params.subject[0]
+      : (params.subject ?? "inquiry"),
+  );
+
   return (
     <main className="grow py-20 bg-slate-50">
       <div className="container mx-auto px-6 max-w-5xl grid md:grid-cols-2 gap-16">
@@ -25,7 +32,9 @@ export default function ContactPage() {
         </div>
 
         <div className="bg-white p-10 rounded-2xl shadow-xl border border-slate-100">
-          <ContactForm />
+          <Suspense fallback={<ContactForm />}>
+            <ContactForm subjectPromise={subjectPromise} />
+          </Suspense>
         </div>
       </div>
     </main>

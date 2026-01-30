@@ -1,6 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
@@ -17,16 +18,51 @@ import { Textarea } from "@/components/ui/textarea";
 import { useSendMessage } from "@/mutations/send-message";
 import { type FormValues, formSchema } from "@/zod/schemas";
 
-export function ContactForm() {
+export function ContactForm({
+  subjectPromise,
+}: {
+  subjectPromise?: Promise<string>;
+}) {
+  const validSubjects = [
+    "inquiry",
+    "100-consultation",
+    "300-full-assistance",
+  ] as const;
+  type SubjectType = (typeof validSubjects)[number];
+
+  const [defaultSubject, setDefaultSubject] = useState<SubjectType>("inquiry");
+
+  // Watch for subjectPromise changes and update defaultSubject
+  useEffect(() => {
+    if (!subjectPromise) return;
+    let mounted = true;
+    subjectPromise.then((subject) => {
+      if (!mounted) return;
+      if (validSubjects.includes(subject as SubjectType)) {
+        setDefaultSubject(subject as SubjectType);
+      } else {
+        setDefaultSubject("inquiry");
+      }
+    });
+    return () => {
+      mounted = false;
+    };
+  }, [subjectPromise]);
+
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
       email: "",
-      subject: "",
+      subject: defaultSubject,
       message: "",
     },
   });
+
+  // Update form field if defaultSubject changes after mount
+  useEffect(() => {
+    form.setValue("subject", defaultSubject);
+  }, [defaultSubject, form]);
 
   const { mutate, isPending } = useSendMessage({
     onSuccess: () => {
@@ -115,7 +151,6 @@ export function ContactForm() {
         name="subject"
         render={({ field, fieldState }) => {
           const id = "form-contact-subject";
-
           return (
             <FieldGroup className="space-y-2">
               <Field data-invalid={fieldState.invalid}>
@@ -128,13 +163,11 @@ export function ContactForm() {
 
                 <NativeSelect
                   {...field}
+                  value={field.value || "inquiry"}
                   id={id}
                   aria-invalid={fieldState.invalid}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-lg  text-sm outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-lg text-sm outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none"
                 >
-                  <option value="" disabled>
-                    Select a subject
-                  </option>
                   <option value="inquiry">General Inquiry</option>
                   <option value="100-consultation">$100 Consultation</option>
                   <option value="300-full-assistance">
