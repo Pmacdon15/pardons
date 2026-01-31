@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 // import "./globals.css";
 
 // const geistSans = Geist({
@@ -17,10 +18,6 @@ export const metadata: Metadata = {
     "Getting a pardon in Canada is easier than you think. Contact us today for more information",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return { children };
+export default function ContactLayout({ children }: { children: ReactNode }) {
+  return <>{children}</>;
 }
