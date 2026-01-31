@@ -10,7 +10,7 @@ export default function Footer() {
             alt="Maple Leaf Logo"
             width={32}
             height={32}
-            className="brightness-0 invert"
+            className="w-5 h-5"
           />
           <span>Pardons Are Us</span>
         </div>
