@@ -86,9 +86,9 @@ export function ContactForm({
       onSubmit={form.handleSubmit(onSubmit)}
       className="space-y-6 max-w-4xl"
     >
-      <h2 className="text-2xl font-semibold">Get a Quote</h2>
+      <h2 className="text-2xl font-semibold">Reach Out</h2>
       <p className="text-muted-foreground">
-        Send us a message so we can schedule an on-site inspection.
+        Send us a message so we can get you started
       </p>
 
       {/* Name */}
