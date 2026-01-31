@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.pardonsareus.ca
+
+# Sitemaps
+Sitemap: https://www.pardonsareus.ca/sitemap.xml
