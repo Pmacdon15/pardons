@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { ContactForm } from "@/components/forms/contact-form";
+import { ContactFormFallback } from "@/components/forms/contact-form-fallback";
 
 export default function ContactPage(props: PageProps<"/contact">) {
   const subjectPromise = props.searchParams.then((params) =>
@@ -32,7 +33,7 @@ export default function ContactPage(props: PageProps<"/contact">) {
         </div>
 
         <div className="bg-white p-10 rounded-2xl shadow-xl border border-slate-100">
-          <Suspense fallback={<ContactForm />}>
+          <Suspense fallback={<ContactFormFallback />}>
             <ContactForm subjectPromise={subjectPromise} />
           </Suspense>
         </div>

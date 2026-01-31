@@ -37,11 +37,11 @@ export default function RootLayout({
           <div className="flex flex-col min-h-screen">
             <Header />
             {children}
+            <Analytics />
             <Footer />
             <Toaster />
           </div>
         </body>
-        <Analytics />
       </html>
     </Providers>
   );
