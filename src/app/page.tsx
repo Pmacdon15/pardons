@@ -213,9 +213,10 @@ export default function Home() {
 										<span>
 											<strong>
 												Multiple Consultations:
+											
 											</strong>{' '}
-											Extended phone support whenever you
-											need it.
+											 Two 30 minutes consultations.
+											
 										</span>
 									</li>
 									<li className="flex items-center gap-4 text-slate-700">
