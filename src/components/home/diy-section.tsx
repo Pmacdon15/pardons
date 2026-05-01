@@ -5,7 +5,7 @@ export function DIYSection() {
 		<section className="container mx-auto px-6 py-24" id="diy">
 			<div className="mx-auto max-w-4xl rounded-3xl bg-slate-900 p-12 text-center text-white">
 				<h2 className="mb-6 font-bold text-4xl">
-					Do It Yourself for Under{' '}
+					Do It Yourself
 				</h2>
 				<p className="mb-8 text-slate-400 text-xl">
 					You don't need expensive legal services. Many Canadians
