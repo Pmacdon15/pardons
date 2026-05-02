@@ -22,7 +22,7 @@ export default function Header() {
 							className="transition-colors hover:text-primary"
 							href="/#how-it-works"
 						>
-							How It Works
+							Why
 						</Link>
 					</li>
 					<li>
